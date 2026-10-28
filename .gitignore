@@ -1,28 +1,41 @@
+# Kaggle competition data: download from the competition page, do not redistribute
 data/
 train/
 test/
 *.zip
-*.tar
-*.tar.gz
-__MACOSX/
 train_labels.csv
 sample_submission.csv
 
+# Regenerable pixel caches (several GB), rebuilt by the notebook from the zip archives
 outputs/
-checkpoints/
-submissions/
-figures/
-logs/
-runs/
-wandb/
-lightning_logs/
-*.pt
+rf_cache/
+cache_*.npz
+__MACOSX/
+
+# Archives, report documents and figures that are submitted separately or regenerated
+*.tar
+*.tar.gz
+Kaggle_Final_Report_*.docx
+Kaggle_Final_Report_*.pdf
+report_figures/
+
+# Intermediate files the notebook regenerates, and checkpoints it never loads
+test_ids_fast_*.npy
+test_probs_fast_*.npy
+baseline_cnn_mac*.pt
+
+# Other model formats and tool output
 *.pth
 *.ckpt
 *.safetensors
 *.onnx
 *.log
+logs/
+runs/
+wandb/
+lightning_logs/
 
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -33,12 +46,14 @@ dist/
 .eggs/
 pip-wheel-metadata/
 
+# Virtual environments
 .venv/
 venv/
 env/
 ENV/
 .python-version
 
+# Notebook and tool caches
 .ipynb_checkpoints/
 .pytest_cache/
 .mypy_cache/
@@ -47,10 +62,12 @@ ENV/
 .coverage
 htmlcov/
 
+# Secrets
 .env
 .env.*
 *.key
 
+# Editors and operating system
 .vscode/
 .idea/
 *.swp
